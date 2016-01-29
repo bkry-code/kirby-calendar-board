@@ -1,5 +1,5 @@
 # Calendar board for Kirby
-**Calendar board** is a custom form field for [Kirby CMS](https://getkirby.com/)
+**Calendar board** is a custom form field for [Kirby CMS](https://getkirby.com/).
 This plugin provides an easy way to add and manage events, activities or booking in the panel through an intuitive calendar board interface.
 
 ![calendar_panel](https://cloud.githubusercontent.com/assets/11831276/12672758/d4f6b954-c678-11e5-9dd7-60a4e67c2f71.png)
@@ -55,6 +55,8 @@ foreach(page('page/day-yyyy-mm-dd')->events()->toStructure() as $event){
 If you need a calendar view also in the website you can use, for example, the great [Calendar library](https://github.com/bastianallgeier/calendar) by Bastian Allgeier and get something like this:
 
 ![calendar_website](https://cloud.githubusercontent.com/assets/11831276/12672797/1022b3fc-c679-11e5-81d2-a65be9c15e1a.png)
+
+For suggestions or help [please let me know](https://github.com/molocLab/kirby-calendar-board/issues/new).
 
 
 ## Author
