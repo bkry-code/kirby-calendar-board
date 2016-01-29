@@ -56,11 +56,10 @@ If you need a calendar view also in the website, you can use, for example, the g
 
 ![calendar_website](https://cloud.githubusercontent.com/assets/11831276/12672797/1022b3fc-c679-11e5-81d2-a65be9c15e1a.png)
 
-For suggestions or help [please let me know](https://github.com/molocLab/kirby-calendar-board/issues/new).
-
 
 ## Author
-Marco Oliva <team@moloc.net>
+Marco Oliva <team@moloc.net>. 
+For suggestions or help [refer to the little imp](https://github.com/molocLab/kirby-calendar-board/issues/new).
 
 ## Credits
 Thanks to [@bastianallgeier](https://github.com/bastianallgeier) for Kirby and [Calendar library](https://github.com/bastianallgeier/calendar) that is used by Calendar board
