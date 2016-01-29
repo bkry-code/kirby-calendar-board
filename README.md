@@ -43,7 +43,7 @@ fields:
 This will create a calendar board interface in panel page detail.
 
 ## Usage within templates
-Long story short: events are store in a structure field into a subpage named in ```day-yyyy-mm-dd``` format.
+Long story short: events are stored in a structure field into a subpage named with ```day-yyyy-mm-dd``` format.
 You can access to those through a standard Kirby code:
 
 ```php
@@ -52,7 +52,7 @@ foreach(page('page/day-yyyy-mm-dd')->events()->toStructure() as $event){
 }
 ```
 
-If you need a calendar view also in the website you can use, for example, the great [Calendar library](https://github.com/bastianallgeier/calendar) by Bastian Allgeier and get something like this:
+If you need a calendar view also in the website, you can use, for example, the great [Calendar library](https://github.com/bastianallgeier/calendar) by Bastian Allgeier and get something like this:
 
 ![calendar_website](https://cloud.githubusercontent.com/assets/11831276/12672797/1022b3fc-c679-11e5-81d2-a65be9c15e1a.png)
 
