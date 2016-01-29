@@ -54,6 +54,8 @@ foreach(page('page/day-yyyy-mm-dd')->events()->toStructure() as $event){
 
 If you need a calendar view also in the website you can use, for example, the great [Calendar library](https://github.com/bastianallgeier/calendar) by Bastian Allgeier and get something like this:
 
+![calendar_website](https://cloud.githubusercontent.com/assets/11831276/12672797/1022b3fc-c679-11e5-81d2-a65be9c15e1a.png)
+
 
 ## Author
 Marco Oliva <team@moloc.net>
