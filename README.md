@@ -47,7 +47,7 @@ Long story short: events are stored in a structure field into a subpage named wi
 You can access to those through a standard Kirby code:
 
 ```php
-foreach(page('page/day-yyyy-mm-dd')->events()->toStructure() as $event){
+foreach(page('[your-page]/[day-yyyy-mm-dd]')->events()->toStructure() as $event){
     echo $event->hour()->html()
 }
 ```
