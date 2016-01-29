@@ -1,6 +1,7 @@
 <?php
+namespace Calendarboard;
 
-class CalendarIterator implements Iterator {
+class CalendarIterator implements \Iterator {
 
   private $_ = array();
 
@@ -713,6 +714,3 @@ class CalendarSecond extends CalendarObj {
   }
 
 }
-
-
-
