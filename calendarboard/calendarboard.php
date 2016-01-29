@@ -7,7 +7,7 @@
  *
  */
  
-require('calendar.php');
+include_once "calendar.php";
 
 class CalendarboardField extends BaseField {
   
@@ -32,7 +32,7 @@ class CalendarboardField extends BaseField {
           $l = panel()->language();
           setlocale(LC_ALL, $l . '_' . str::upper($l)); 
           
-          $cal= new calendar();
+          $cal= new Calendarboard\calendar();
           
           $route_url = purl($this->model, 'field/' . $this->name . '/calendarboard/get-day/');
           
