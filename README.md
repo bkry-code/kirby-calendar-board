@@ -11,9 +11,14 @@ Everytime you click on a day cell a little imp creates a day subpage (or edits i
 
 The events in this page are stored into a structure field named ```events```.
 
+For performance reasons also years folders are created (if they don't exist) in a ```y-yyyy``` format.
+The days folders are stored in them. See below for more infos about years folders.
+
 ## Installation
 If not already existing, add a new ```fields``` folder to ```site``` directory.
 Put ```calendarboard``` folder and all its contents into ```/site/fields/```.
+
+(Optional: add ```calendar-board-year.yaml``` into ```blueprints``` folder).
 
 Then add ```calendar-board-day.php``` file into ```blueprints``` folder.
 This is the blueprint for day detail subpage.
@@ -55,6 +60,19 @@ foreach(page('[your-page]/[day-yyyy-mm-dd]')->events()->toStructure() as $event)
 If you need a calendar view also in the website, you can use, for example, the great [Calendar library](https://github.com/bastianallgeier/calendar) by Bastian Allgeier and get something like this:
 
 ![calendar_website](https://cloud.githubusercontent.com/assets/11831276/12672797/1022b3fc-c679-11e5-81d2-a65be9c15e1a.png)
+
+##About performance, breadcrumb and hack
+
+Years folders are useful because they allow to split the day folders in more directories avoidimg performance issues.
+The con is that you will see the years breadcrumb in the panel header and you could open their pages.
+At the end years pages are almost useless and if you think that this could confound the user you can hide them.
+
+**How to hide years breadcrumb:**
+
+- create a panel.css file
+- write ``` ul.breadcrumb-list > li > a[title^="y-"]{display:none} ``` in it
+- upload panel.css into ``` www.yousite.com/assets/css/ ``` folder
+- link to this css file in the config file with ```c::set('panel.stylesheet', '/assets/css/panel.css'); ```
 
 
 ## Author
