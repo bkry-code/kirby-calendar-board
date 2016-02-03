@@ -63,7 +63,7 @@ If you need a calendar view also in the website, you can use, for example, the g
 
 ##About performance, breadcrumb and hack
 
-Years folders are useful because they allow to split the day folders in more directories avoidimg performance issues.
+Years folders are useful because they allow to split the day folders in more directories avoiding performance issues.
 The con is that you will see the years breadcrumb in the panel header and you could open their pages.
 
 ![download](https://cloud.githubusercontent.com/assets/11831276/12785466/f3d9db72-ca8c-11e5-9822-37665ae084f8.png)
