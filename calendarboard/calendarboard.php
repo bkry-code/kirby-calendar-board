@@ -1,9 +1,9 @@
 <?php
 /**
- * Calendar Board Field for Kirby CMS
+ * Calendar Board Field for Kirby CMS (v. 2.2.3)
  *
  * @author    Marco Oliva - team@moloc.net
- * @version   0.2
+ * @version   0.3
  *
  */
  
@@ -28,13 +28,15 @@ class CalendarboardField extends BaseField {
         'action' => function($month, $year)
         {  
           date_default_timezone_set('UTC');
-          
           $l = panel()->language();
           setlocale(LC_ALL, $l . '_' . str::upper($l)); 
           
+          $model = $this->model;
+          $year_folder = '/year-' . $year;          
+          
           $cal= new Calendarboard\calendar();
           
-          $route_url = purl($this->model, 'field/' . $this->name . '/calendarboard/get-day/');
+          $route_url = purl($model, 'field/' . $this->name . '/calendarboard/get-day/');
           
           $currentMonth = $cal->month($year, $month);
           $prevMonth = $currentMonth->prev();
@@ -63,9 +65,7 @@ class CalendarboardField extends BaseField {
                 if ($day->month() != $currentMonth){
                   $class='is-sibling';
                   $go = '';
-                }
-                
-                if ($day->isToday()){
+                }else if ($day->isToday()){
                   $class='is-today';
                 }
                 
@@ -76,9 +76,11 @@ class CalendarboardField extends BaseField {
                   
                   /* Events in the day */
                   if ($day->month() == $currentMonth){
-                    if(page($this->model . '/day-' . $day)){
+                  
+                    /* If day folder exists */
+                    if(page($model . $year_folder . '/day-' . $day)){
                     
-                      $events = page($this->model . '/day-' . $day)->events()->toStructure();
+                      $events = page($model . $year_folder . '/day-' . $day)->events()->toStructure();
                       
                       foreach($events as $event){
                         $h .= '<div class="dot"></div>';
@@ -102,17 +104,32 @@ class CalendarboardField extends BaseField {
         {
           
           $date = str::split($day, '-');
-          $date_friendly = $date[2] . '-' . $date[1] . '-' . $date[0];
+          $date_year = $date[0];
+          $date_month = $date[1];
+          $date_day = $date[2];
+          
+          $date_friendly = $date_day . '-' . $date_month . '-' . $date_year;
+          
+          $model = $this->model;
+          $year_folder = 'year-' . $date_year;
+          $day_folder = 'day-' . $day;
+          
+          // If year folder doesn't exist, create it
+          if(!site()->find($model . '/' . $year_folder)){
+            page($model)->children()->create($year_folder, 'calendar-board-year', array(
+              'title' => 'y-' . $date_year
+            ));    
+          }          
           
           // If day doesn't exists, create it
-          if(!site()->find($this->model . '/day-' . $day)){       
-            page($this->model)->children()->create('day-' . $day, 'calendar-board-day', array(
+          if(!site()->find($model . '/' . $year_folder . '/' . $day_folder)){       
+            page($model . '/' . $year_folder)->children()->create($day_folder, 'calendar-board-day', array(
               'title' => $date_friendly
             ));
           }          
           
           // Go to day edit page
-          go(purl($this->model, 'day-' . $day . '/edit/'));
+          go(purl($model, $year_folder . '/' . $day_folder . '/edit/'));
           
         }
       )
@@ -128,8 +145,6 @@ class CalendarboardField extends BaseField {
     $calendar = brick('div');
     $calendar->addClass('calendarboard');
     $calendar->data('field-name', $this->name);
-    
-    // Call createCalendar() in calendarboard.js
     $calendar->data("field", "createCalendar"); 
 
     return $calendar;
