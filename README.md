@@ -11,7 +11,7 @@ Everytime you click on a day cell a little imp creates a day subpage (or edits i
 
 The events in this page are stored into a structure field named ```events```.
 
-For performance reasons also years folders are created (if they don't exist) in a ```y-yyyy``` format.
+For performance reasons also years folders are created (if they don't exist) in a ```year-yyyy``` format.
 The days folders are stored in them. See below for more infos about years folders.
 
 ## Installation
@@ -52,7 +52,7 @@ Long story short: events are stored in a structure field into a subpage named wi
 You can access to those through a standard Kirby code:
 
 ```php
-foreach(page('[your-page]/[day-yyyy-mm-dd]')->events()->toStructure() as $event){
+foreach(page('[your-page]/[year-yyyy]/[day-yyyy-mm-dd]')->events()->toStructure() as $event){
     echo $event->hour()->html()
 }
 ```
