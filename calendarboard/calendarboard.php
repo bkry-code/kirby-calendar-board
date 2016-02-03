@@ -117,7 +117,7 @@ class CalendarboardField extends BaseField {
           // If year folder doesn't exist, create it
           if(!site()->find($model . '/' . $year_folder)){
             page($model)->children()->create($year_folder, 'calendar-board-year', array(
-              'title' => 'y-' . $date_year
+              'title' => 'year-' . $date_year
             ));    
           }          
           
