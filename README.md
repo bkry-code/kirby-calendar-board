@@ -1,6 +1,6 @@
 # Calendar board for Kirby
 **Calendar board** is a custom form field for [Kirby CMS](https://getkirby.com/).
-This plugin provides an easy way to add and manage events, activities or booking in the panel through an intuitive calendar board interface.
+This plugin provides an easy way to add and manage events, activities or bookings in the panel through an intuitive calendar board interface.
 
 ![calendar_panel](https://cloud.githubusercontent.com/assets/11831276/12672758/d4f6b954-c678-11e5-9dd7-60a4e67c2f71.png)
 
