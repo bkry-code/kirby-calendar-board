@@ -42,7 +42,7 @@ div.calendarboard a.day{
   color:#fff;
 }
 
-div.calendarboard a.day:hover{
+div.calendarboard a.day:hover, div.calendarboard a.day.is-today:hover{
   background-color:#fff;
   color:#000;
 }
