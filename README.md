@@ -73,7 +73,7 @@ At the end years pages are almost useless and if you think that this could confo
 **How to hide years breadcrumb:**
 
 - create a panel.css file
-- copy ``` ul.breadcrumb-list > li > a[title^="year-"]{display:none} ``` in it
+- copy ``` nav.breadcrumb a[title^="year-"]{display:none} ``` in it
 - upload panel.css into ``` www.yousite.com/assets/css/ ``` folder
 - link to this css file in the config file with ```c::set('panel.stylesheet', '/assets/css/panel.css'); ```
 
