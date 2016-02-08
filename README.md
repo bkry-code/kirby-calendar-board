@@ -23,6 +23,31 @@ Put ```calendarboard``` folder and all its contents into ```/site/fields/```.
 Then add ```calendar-board-day.php``` file into ```blueprints``` folder.
 This is the blueprint for day detail subpage.
 
+```
+title: day
+pages: false
+files: false
+deletable: false
+fields:
+  title:
+    label: Day
+    type:  text
+    readonly: true
+  events:   <-- DON'T CHANGE THIS
+    label: Daily tasks
+    type: structure  <-- DON'T CHANGE THIS
+    fields:
+      hour:
+        label: Time
+        type: time 
+      location:
+        label: Location
+        type: text 
+      activity:
+        label: Activity
+        type: text 
+```
+
 You can freely change this blueprint and in particular the structure field of the events.
 **The only thing you can't do is to modify ```events:``` field name and type (structure).**
 
@@ -41,7 +66,7 @@ fields:
     label: Title
     type:  text   
   calendar:
-    label: Job meetings
+    label: Daily tasks
     type:  calendarboard
 ```
 
