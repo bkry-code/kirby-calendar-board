@@ -83,7 +83,7 @@ class CalendarboardField extends BaseField {
                       $events = page($model . $year_folder . '/day-' . $day)->events()->toStructure();
                       
                       foreach($events as $event){
-                        $h .= '<div class="dot"></div>';
+                        $h .= '<div class="event"></div>';
                       } 
                     }
                   }                  
