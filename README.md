@@ -33,9 +33,9 @@ fields:
     label: Day
     type:  text
     readonly: true
-  events:   <-- DON'T CHANGE THIS
+  events:   <-- DON'T MODIFY THIS
     label: Daily tasks
-    type: structure  <-- DON'T CHANGE THIS
+    type: structure  <-- DON'T MODIFY THIS
     fields:
       hour:
         label: Time
