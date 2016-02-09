@@ -64,7 +64,7 @@ div.calendarboard a.day.is-today:not(.is-sibling) p{
   text-align:center;
 }
 
-div.calendarboard span.month__prev, span.month__next{
+div.calendarboard span.month__prev, div.calendarboard span.month__next{
   display:block;
   float:left;
   width:20%;
@@ -72,6 +72,11 @@ div.calendarboard span.month__prev, span.month__next{
   font-size: 2em;
   line-height: 1; 
   cursor:pointer;  
+  color:#999;  
+}
+
+div.calendarboard span.month__prev:hover, div.calendarboard span.month__next:hover{
+  color:#000;  
 }
 
 div.calendarboard div.calendar__title{
