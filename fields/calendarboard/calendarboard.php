@@ -78,7 +78,7 @@ class CalendarboardField extends BaseField {
                   if ($day->month() == $currentMonth){
                   
                     /* If day folder exists */
-                    if(page($model . $year_folder . '/day-' . $day)){
+                    if(site()->find($model . $year_folder . '/day-' . $day)){
                     
                       $events = page($model . $year_folder . '/day-' . $day)->events()->toStructure();
                       
