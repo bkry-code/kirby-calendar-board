@@ -20,7 +20,7 @@ Put ```calendarboard``` folder and all its contents into ```/site/fields/```.
 
 (Optional: add ```calendar-board-year.yaml``` into ```blueprints``` folder).
 
-Then add ```calendar-board-day.php``` file into ```blueprints``` folder.
+Then add ```calendar-board-day.yaml``` file into ```blueprints``` folder.
 This is the blueprint for day detail subpage.
 
 ```
@@ -99,7 +99,7 @@ At the end years pages are almost useless and if you think that this could confo
 
 - create a panel.css file
 - copy ``` nav.breadcrumb a[title^="year-"]{display:none} ``` in it
-- upload panel.css into ``` www.yousite.com/assets/css/ ``` folder
+- upload panel.css into ``` www.yoursite.com/assets/css/ ``` folder
 - link to this css file in the config file with ```c::set('panel.stylesheet', '/assets/css/panel.css'); ```
 
 
