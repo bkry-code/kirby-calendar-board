@@ -10,10 +10,6 @@ class CalendarboardFieldController extends Kirby\Panel\Controllers\Field {
     setlocale(LC_ALL, $l . '_' . str::upper($l)); 
     //setlocale(LC_ALL, 'us_US'); 
     
-    // Get spoiler string and extract field keys
-    $spoiler__tpl = $this->field()->spoiler();
-    preg_match_all('/\{{(.*?)\}}/', $spoiler__tpl, $spoiler__fields); 
-    
     // Calendar stuff
     $cal = new Calendarboard\calendar();
     $currentMonth = $cal->month($year, $month);
