@@ -1,15 +1,15 @@
-div.calendarboard{
+#calendarboard{
   background: #fff;
   border: 2px solid #ddd;
 }
 
-div.calendarboard:before, div.calendarboard:after {
+#calendarboard:before, #calendarboard:after {
   content: "";
   display: table;
   clear: both;
 }
 
-div.calendarboard div.weekday{
+#calendarboard div.weekday{
   width: 14.285714285714286%;
   float: left;
   color: #999;
@@ -22,41 +22,40 @@ div.calendarboard div.weekday{
   text-transform:capitalize;
 }
 
-div.calendarboard a.day{
+#calendarboard a.day{
   display: block;
   width: 14.285714285714286%;
+  height: 132px;
   float: left;
   position:relative;
   border-top:1px solid #ddd;
   border-left:1px solid #ddd;
-  overflow:hidden;
-  line-height:0;
 }
 
-div.calendarboard a.day:nth-child(7n-5){
-  border-left:1px solid #fff;
+#calendarboard a.day:nth-child(7n-5){
+  border-left:none;
 }
 
-div.calendarboard a.day:not(.is-sibling):hover{
+#calendarboard a.day:not(.is-sibling):hover{
   background-color:#f0f0f0;
 }
 
-div.calendarboard a.day.is-sibling {
+#calendarboard a.day.is-sibling {
   cursor:default;
   color:#ccc;
 }  
 
-div.calendarboard a.day>p{
-  position:absolute;
-  top:5px;
-  right:7px;
-  width:20px;
-  height:20px;
-  text-align:right;
-  line-height:19px;
+#calendarboard a.day>p{
+    position:absolute;
+    top:5px;
+    right:7px;
+    width:20px;
+    height:20px;
+    text-align:right;
+    line-height:19px;
 }
 
-div.calendarboard a.day.is-today:not(.is-sibling) p{
+#calendarboard a.day.is-today:not(.is-sibling) p{
   background-color:#8dae28;
   color:#fff;
   border-radius:50%;
@@ -64,22 +63,22 @@ div.calendarboard a.day.is-today:not(.is-sibling) p{
   text-align:center;
 }
 
-div.calendarboard span.month__prev, div.calendarboard span.month__next{
+#calendarboard span.month__prev, #calendarboard span.month__next{
   display:block;
   float:left;
   width:28.57142857142857%;
   text-align:center;
   font-size: 2em;
-  line-height: 1;
-  cursor:pointer;  
+  line-height: 1; 
+  cursor:pointer;
   color:#999;  
 }
 
-div.calendarboard span.month__prev:hover, div.calendarboard span.month__next:hover{
+#calendarboard span.month__prev:hover, #calendarboard span.month__next:hover{
   color:#000;  
 }
 
-div.calendarboard div.calendar__title{
+#calendarboard div.calendar__title{
   float:left;
   width:42.85714285714286%;
   text-align:center;
@@ -87,20 +86,33 @@ div.calendarboard div.calendar__title{
   text-transform:capitalize;
 }
 
-div.calendarboard div.events{
+#calendarboard div.events{
   position:absolute;
   bottom:1px;
   width:100%;
   padding:0px 4px;
 }
 
-div.calendarboard div.events div.event{
+#calendarboard div.events div.event{
   display:block;
   float:left;
-  border-radius:10px;
+  border-radius:2px;
   background-color:#000;
-  width:8px;
-  height:8px;
+  width:100%;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin-bottom:2px;
+  font-size:11px;
+  padding:2px 4px;
+  color:#fff;
+  cursor: move;
+}
+
+#calendarboard div.events div.dot{
+  border-radius:10px;
+  width:10px;
+  height:10px;
   margin-right:2px;
+  cursor: default;
 }
